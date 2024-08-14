@@ -9,12 +9,14 @@ This is a starter template for a React project using Vite as the build tool. It 
 - Jest for unit testing
 - RTL (React Testing Library) for component testing
 - Scss for styling
+- ESLint and Prettier for code linting and formatting
+- Husky and Lint-staged for pre-commit checks
 
 ## Getting Started
 
 To get started with this project, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/vite-react-bootstrap.git`
+1. Clone the repository: `git clone https://github.com/JtMeulen/vite-react-bootstrap.git`
 2. Install dependencies: `npm install`
 3. Start the development server: `npm run dev`
 4. Open your browser and navigate to `http://localhost:3000`
@@ -25,12 +27,6 @@ This project includes a testing setup using Jest and RTL. To run the tests, use 
 
 ```bash
 npm run test
+<-- or -->
+npm run test:watch
 ```
-
-## Contributing
-
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.

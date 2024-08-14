@@ -1,4 +1,0 @@
-- Include a routing package?
-- Basic styling for default page
-- Replace vite logo
-- Move fetch mock function to jest setup structure

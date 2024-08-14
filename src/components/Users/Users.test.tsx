@@ -1,24 +1,8 @@
 import { render, screen } from '@testing-library/react';
+import { mockFetch } from '@/utils/testHelpers';
 import { Users } from './Users';
 
-const mockFetch = (response: unknown, success: boolean = true) => {
-  global.fetch = jest.fn(async () =>
-    Promise.resolve({
-      json: async () =>
-        success ? Promise.resolve(response) : Promise.reject(),
-    }),
-  ) as jest.Mock;
-};
-
 describe('Users', () => {
-  beforeEach(() => {
-    global.fetch = jest.fn(async () => Promise.resolve()) as jest.Mock;
-  });
-
-  afterEach(() => {
-    jest.resetAllMocks();
-  });
-
   it('renders correctly', async () => {
     render(<Users />);
 
@@ -27,11 +11,7 @@ describe('Users', () => {
   });
 
   it('renders user data after fetching', async () => {
-    const mockData = [
-      { name: 'John Doe' },
-      { name: 'Bruce Wayne' },
-      { name: 'Clark Kent' },
-    ];
+    const mockData = [{ name: 'John Doe' }, { name: 'Bruce Wayne' }, { name: 'Clark Kent' }];
 
     mockFetch(mockData);
 
