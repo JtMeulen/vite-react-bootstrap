@@ -1,0 +1,7 @@
+@use '../../styles/mixins.scss';
+
+.count {
+  & button {
+    @include mixins.button();
+  }
+}

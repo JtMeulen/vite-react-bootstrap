@@ -1,0 +1,20 @@
+@mixin button() {
+  background-color: var(--button-color);
+  color: var(--font-color);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin-inline: 8px;
+
+  &:hover {
+    box-shadow: 0 0 20px -4px var(--button-color-hover);
+  }
+
+  &:active {
+    background-color: var(--button-color-active);
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,84 @@
+@use './variables' as *;
+
+// Dark mode first
+:root {
+  --primary-100: #{$primary-100};
+  --primary-200: #{$primary-200};
+  --primary-300: #{$primary-300};
+  --primary-400: #{$primary-400};
+  --primary-500: #{$primary-500};
+  --primary-600: #{$primary-600};
+
+  --surface-100: #{$surface-100};
+  --surface-200: #{$surface-200};
+  --surface-300: #{$surface-300};
+  --surface-400: #{$surface-400};
+  --surface-500: #{$surface-500};
+  --surface-600: #{$surface-600};
+
+  --font-color-100: #{$font-color-100};
+  --font-color-200: #{$font-color-200};
+  --font-color-300: #{$font-color-300};
+  --font-color-400: #{$font-color-400};
+  --font-color-500: #{$font-color-500};
+  --font-color-600: #{$font-color-600};
+}
+
+// Light mode
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-100: #{$primary-100-light};
+    --primary-200: #{$primary-200-light};
+    --primary-300: #{$primary-300-light};
+    --primary-400: #{$primary-400-light};
+    --primary-500: #{$primary-500-light};
+    --primary-600: #{$primary-600-light};
+
+    --surface-100: #{$surface-100-light};
+    --surface-200: #{$surface-200-light};
+    --surface-300: #{$surface-300-light};
+    --surface-400: #{$surface-400-light};
+    --surface-500: #{$surface-500-light};
+    --surface-600: #{$surface-600-light};
+
+    --font-color-100: #{$font-color-100-light};
+    --font-color-200: #{$font-color-200-light};
+    --font-color-300: #{$font-color-300-light};
+    --font-color-400: #{$font-color-400-light};
+    --font-color-500: #{$font-color-500-light};
+    --font-color-600: #{$font-color-600-light};
+  }
+}
+
+// Alias tokens
+:root {
+  --background-color: var(--surface-100);
+
+  --heading-color: var(--font-color-500);
+  --font-color: var(--font-color-100);
+
+  --button-color: var(--primary-300);
+  --button-color-hover: var(--primary-200);
+  --button-color-active: var(--primary-400);
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  margin: 0;
+  padding: 16px;
+  font-size: 1rem;
+  line-height: 1;
+
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+}
