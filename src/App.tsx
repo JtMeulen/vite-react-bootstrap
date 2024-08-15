@@ -1,11 +1,11 @@
-import { HelloWorld } from '@/components/HelloWorld/HelloWorld';
-import { Users } from '@/components/Users/Users';
+import { BrowserRouter } from 'react-router-dom';
+
+import { Layout } from './Layout';
 
 export const App = () => {
   return (
-    <main>
-      <HelloWorld />
-      <Users />
-    </main>
+    <BrowserRouter>
+      <Layout />
+    </BrowserRouter>
   );
 };

@@ -1,0 +1,5 @@
+- react-query for data fetching (tanstack)
+  - fetch data from JSONPlaceholder API
+  - display data in a list
+- App should be handling providers for QueryClientProvider and ReactQueryDevtools
+  - https://stackblitz.com/github/tanstack/query/tree/main/examples/react/star-wars?embed=1&theme=dark&preset=node&file=src/index.tsx

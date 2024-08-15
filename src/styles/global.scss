@@ -60,6 +60,11 @@
   --button-color: var(--primary-300);
   --button-color-hover: var(--primary-200);
   --button-color-active: var(--primary-400);
+
+  --link-color: var(--primary-300);
+  --link-color-hover: var(--primary-200);
+  --link-color-active: var(--primary-400);
+  --link-color-visited: var(--primary-500);
 }
 
 * {
@@ -82,4 +87,22 @@ h4,
 h5,
 h6 {
   color: var(--heading-color);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--link-color-hover);
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: var(--link-color-active);
+  }
+
+  &:visited {
+    color: var(--link-color-visited);
+  }
 }

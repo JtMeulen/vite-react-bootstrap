@@ -17,8 +17,7 @@ export default {
     'src/**/*.{ts,tsx}',
 
     // Exclude files
-    '!src/App.tsx',
-    '!src/main.tsx',
+    '!src/*.tsx',
     '!src/**/*.{d,types}.{ts,tsx}',
   ],
   coverageThreshold: {
