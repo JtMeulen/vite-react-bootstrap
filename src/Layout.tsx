@@ -1,4 +1,4 @@
-import { Route, Routes, Link as RouterLink, Navigate } from 'react-router-dom';
+import { Navigate, Route, Link as RouterLink, Routes } from 'react-router-dom';
 
 import { HelloWorld } from '@/components/HelloWorld/HelloWorld';
 import { Users } from '@/components/Users/Users';
@@ -16,7 +16,7 @@ export const Layout = () => {
         <Routes>
           <Route path="/" element={<HelloWorld />} />
           <Route path="/users" element={<Users />} />
-          <Route path="*" element={<Navigate to="/4" />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>
     </>

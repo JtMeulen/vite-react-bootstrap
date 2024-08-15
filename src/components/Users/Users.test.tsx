@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
+
 import { mockFetch } from '@/utils/testHelpers';
+
 import { Users } from './Users';
 
 describe('Users', () => {

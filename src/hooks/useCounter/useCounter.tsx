@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { UseCounterProps } from './useCounter.types';
 
 export const useCounter = ({ initialValue = 0 }: UseCounterProps = {}) => {
