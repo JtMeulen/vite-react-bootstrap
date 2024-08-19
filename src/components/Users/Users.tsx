@@ -1,25 +1,36 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+
+type IUser = {
+  id: number;
+  name: string;
+};
 
 export const Users = () => {
-  const [users, setUsers] = useState<string[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  const { data, error, isError, isPending } = useQuery({
+    queryKey: ['users'],
+    queryFn: async () => {
+      const res = await fetch('https://jsonplaceholder.typicode.com/users');
 
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((res) => res.json())
-      .then((data) => setUsers(data.map((user: { name: string }) => user.name)))
-      .catch(() => setError('Error fetching users'));
-  }, []);
+      if (!res.ok) {
+        throw new Error('Error fetching users');
+      }
+
+      return res.json();
+    },
+  });
 
   return (
     <section>
       <h2>Users</h2>
-      {error && <p>{error}</p>}
-      <ul>
-        {users.map((user) => (
-          <li key={user}>{user}</li>
-        ))}
-      </ul>
+      {isError && <p>{error.message}</p>}
+      {isPending && <p>Loading...</p>}
+      {data && (
+        <ul>
+          {data.map((user: IUser) => (
+            <li key={user.id}>{user.name}</li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 };
